@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SNIP — Self-Hosted URL Shortener</title>
-  <meta name="description" content="SNIP is an open-source, self-hosted URL shortener built with Node.js, Express, SQLite, and Docker. Built by Vini Gani." />
+  <title>SNIP - URL Shortener</title>
+  <meta name="description" content="SNIP is an open-source, self-hosted URL shortener built with Node.js, Express, PostgreSQL, and Docker. Deployed on Render." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet" />
   <style>
@@ -77,8 +77,6 @@
       align-items: center;
     }
 
-    .hero-left {}
-
     .badge {
       display: inline-flex;
       align-items: center;
@@ -111,10 +109,7 @@
       color: var(--ink);
     }
 
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    h1 em { font-style: italic; color: var(--accent); }
 
     .hero-desc {
       font-size: 0.82rem;
@@ -178,7 +173,7 @@
       letter-spacing: 0.03em;
     }
 
-    /* TERMINAL MOCKUP */
+    /* TERMINAL */
     .terminal {
       background: #1a1814;
       border: 1px solid #333;
@@ -211,7 +206,6 @@
     }
 
     .terminal-body { padding: 1.2rem 1.5rem; }
-
     .t-line { display: block; margin-bottom: 0.2rem; }
     .t-prompt { color: #4ade80; }
     .t-cmd { color: #f0f0f0; }
@@ -219,9 +213,8 @@
     .t-out { color: #aaa; }
     .t-url { color: #60a5fa; }
     .t-success { color: #4ade80; }
-    .t-dim { color: #444; }
 
-    /* FEATURES */
+    /* SECTIONS */
     .section {
       max-width: 900px;
       margin: 0 auto;
@@ -246,6 +239,7 @@
       margin-bottom: 3rem;
     }
 
+    /* FEATURES */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -280,11 +274,7 @@
       color: var(--ink);
     }
 
-    .feature p {
-      font-size: 0.75rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
+    .feature p { font-size: 0.75rem; line-height: 1.7; color: var(--muted); }
 
     /* STACK */
     .stack-grid {
@@ -314,32 +304,19 @@
       flex-shrink: 0;
     }
 
-    .stack-name {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.2rem;
-    }
+    .stack-name { font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+    .stack-desc { font-size: 0.68rem; color: var(--muted); }
 
-    .stack-desc {
-      font-size: 0.68rem;
-      color: var(--muted);
-    }
-
-    /* HOW IT WORKS */
+    /* STEPS */
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      counter-reset: step;
     }
 
     .step {
       padding: 2rem 1.5rem;
-      border-right: 1px solid var(--border);
       border: 1px solid var(--border);
       margin-right: -1px;
-      position: relative;
     }
 
     .step-num {
@@ -352,19 +329,25 @@
       display: block;
     }
 
-    .step h3 {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.02em;
+    .step h3 { font-size: 0.8rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+    .step p { font-size: 0.7rem; color: var(--muted); line-height: 1.7; }
+
+    /* CODE */
+    .code-block {
+      background: #1a1814;
+      color: #d4d0c8;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      line-height: 1.8;
+      overflow-x: auto;
+      border: 1px solid #333;
+      margin-top: 2rem;
     }
 
-    .step p {
-      font-size: 0.7rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .code-block .c { color: #555; }
+    .code-block .k { color: #c8401e; }
+    .code-block .s { color: #4ade80; }
+    .code-block .n { color: #60a5fa; }
 
     /* FOOTER */
     footer {
@@ -375,12 +358,7 @@
       justify-content: space-between;
     }
 
-    .footer-left {
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-
+    .footer-left { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; }
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a {
       font-size: 0.65rem;
@@ -391,31 +369,12 @@
     }
     .footer-links a:hover { color: var(--ink); }
 
-    /* CODE BLOCK */
-    .code-block {
-      background: #1a1814;
-      color: #d4d0c8;
-      padding: 1.5rem 2rem;
-      font-size: 0.75rem;
-      line-height: 1.8;
-      overflow-x: auto;
-      border: 1px solid #333;
-    }
-
-    .code-block .c { color: #555; }
-    .code-block .k { color: #c8401e; }
-    .code-block .s { color: #4ade80; }
-    .code-block .n { color: #60a5fa; }
-
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    .hero-left > * {
-      animation: fadeUp 0.6s ease both;
-    }
+    .hero-left > * { animation: fadeUp 0.6s ease both; }
     .badge { animation-delay: 0s; }
     h1 { animation-delay: 0.1s; }
     .hero-desc { animation-delay: 0.2s; }
@@ -445,7 +404,7 @@
     <li><a href="#features">Features</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#setup">Setup</a></li>
-    <li><a href="https://github.com/vinigani01/urlsnip" target="_blank">GitHub ↗</a></li>
+    <li><a href="https://github.com/vinigani01/snip" target="_blank">GitHub ↗</a></li>
   </ul>
 </nav>
 
@@ -456,17 +415,17 @@
       <span class="badge-dot"></span>
       Open Source &nbsp;·&nbsp; Self-Hosted
     </div>
-    <h1>Shorten<br>URLs, <em>your</em><br>way.</h1>
+    <h1>Short <em>link,</em><br>Long reach.</h1>
     <p class="hero-desc">
-      SNIP is a lightweight, self-hosted URL shortener you run on your own machine.
-      No third-party tracking. No rate limits. Full control — containerised with Docker.
+      SNIP is a lightweight, self-hosted URL shortener you run yourself.
+      No third-party tracking. No rate limits. Full control —
+      containerised with Docker and deployed on Render.
     </p>
     <div class="btn-row">
-      <a href="https://helmet-escargot-deception.ngrok-free.dev" target="_blank" class="btn-demo">Try Live Demo ↗</a>
-      <a href="https://github.com/vinigani01/urlsnip" target="_blank" class="btn-primary">View on GitHub</a>
-      <a href="#setup" class="btn-outline">Quick Setup</a>
+      <a href="https://snip-zdbg.onrender.com" target="_blank" class="btn-demo">Try Live Demo ↗</a>
+      <a href="https://github.com/vinigani01/snip" target="_blank" class="btn-primary">View on GitHub</a>
     </div>
-    <p class="demo-note">⚡ Live demo may be offline when not actively running</p>
+    <p class="demo-note"> Free tier - first load may take upto a minute to wake up</p>
   </div>
 
   <div class="hero-right">
@@ -478,20 +437,20 @@
         <span class="terminal-title">bash</span>
       </div>
       <div class="terminal-body">
-        <span class="t-line"><span class="t-comment"># clone & run in 3 steps</span></span>
+        <span class="t-line"><span class="t-comment"># clone & run locally</span></span>
         <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">git clone github.com/vinigani01/urlsnip</span></span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">git clone github.com/vinigani01/snip</span></span>
         <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cd snip</span></span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">docker compose up --build -d</span></span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">docker compose -f docker-compose-local.yml up -d</span></span>
         <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-out">[+] Running 3/3</span></span>
-        <span class="t-line"><span class="t-success">  ✔ Volume created</span></span>
-        <span class="t-line"><span class="t-success">  ✔ Container started</span></span>
+        <span class="t-line"><span class="t-out">[+] Running 2/2</span></span>
+        <span class="t-success">  ✔ Container snip-db started</span>
+        <span class="t-line"><span class="t-success">  ✔ Container url-shortener started</span></span>
         <span class="t-line">&nbsp;</span>
         <span class="t-line"><span class="t-success">🚀 Running at </span><span class="t-url">http://localhost:3000</span></span>
         <span class="t-line">&nbsp;</span>
         <span class="t-line"><span class="t-comment"># your first short link</span></span>
-        <span class="t-line"><span class="t-url">https://snip.vini.lol/8GmDsn</span></span>
+        <span class="t-line"><span class="t-url">snip-zdbg.onrender.com/8GmDsn</span></span>
       </div>
     </div>
   </div>
@@ -516,7 +475,7 @@
     <div class="feature">
       <span class="feature-num">03</span>
       <h3>Persistent Storage</h3>
-      <p>Links are stored in SQLite and survive container restarts via Docker volumes. No external database needed.</p>
+      <p>Links are stored in PostgreSQL and persist across container restarts and redeployments on Render.</p>
     </div>
     <div class="feature">
       <span class="feature-num">04</span>
@@ -525,13 +484,13 @@
     </div>
     <div class="feature">
       <span class="feature-num">05</span>
-      <h3>Public Access</h3>
-      <p>Expose your instance publicly via Cloudflare Tunnel or ngrok. Set <code>BASE_URL</code> and your links work everywhere.</p>
+      <h3>Cloud Deployed</h3>
+      <p>Deployed on Render with a free PostgreSQL database. Auto-redeploys on every push to GitHub.</p>
     </div>
     <div class="feature">
       <span class="feature-num">06</span>
-      <h3>Zero Dependencies</h3>
-      <p>No external services, no cloud accounts required. One <code>docker compose up</code> and you're running.</p>
+      <h3>Run Anywhere</h3>
+      <p>Runs locally via Docker Compose or on any platform that supports Docker. No vendor lock-in.</p>
     </div>
   </div>
 </section>
@@ -552,8 +511,8 @@
     <div class="stack-item">
       <div class="stack-icon">◫</div>
       <div>
-        <div class="stack-name">SQLite (better-sqlite3)</div>
-        <div class="stack-desc">Embedded database — zero config, fast, file-based persistence</div>
+        <div class="stack-name">PostgreSQL</div>
+        <div class="stack-desc">Managed relational database — persistent storage via Render's free tier</div>
       </div>
     </div>
     <div class="stack-item">
@@ -564,10 +523,24 @@
       </div>
     </div>
     <div class="stack-item">
+      <div class="stack-icon">☁</div>
+      <div>
+        <div class="stack-name">Render</div>
+        <div class="stack-desc">Cloud hosting with Docker runtime, free PostgreSQL, and auto-deploy from GitHub</div>
+      </div>
+    </div>
+    <div class="stack-item">
       <div class="stack-icon">◈</div>
       <div>
         <div class="stack-name">Vanilla HTML/CSS/JS</div>
         <div class="stack-desc">No frontend framework — fast, dependency-free, served directly by Express</div>
+      </div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-icon">↗</div>
+      <div>
+        <div class="stack-name">nanoid</div>
+        <div class="stack-desc">Generates compact, URL-safe random short codes for each link</div>
       </div>
     </div>
   </div>
@@ -582,44 +555,42 @@
     <div class="step">
       <span class="step-num">01</span>
       <h3>Clone the repo</h3>
-      <p>Download the project from GitHub onto your machine or server.</p>
+      <p>Download the project from GitHub onto your local machine.</p>
     </div>
     <div class="step">
       <span class="step-num">02</span>
-      <h3>Set BASE_URL</h3>
-      <p>Point <code>BASE_URL</code> to your domain or tunnel URL so generated links are correct.</p>
+      <h3>docker compose up</h3>
+      <p>One command starts both the app and a local Postgres container.</p>
     </div>
     <div class="step">
       <span class="step-num">03</span>
-      <h3>docker compose up</h3>
-      <p>One command builds the image, starts the container, and creates the data volume.</p>
+      <h3>Or deploy to Render</h3>
+      <p>Connect the repo to Render — the blueprint provisions everything automatically.</p>
     </div>
     <div class="step">
       <span class="step-num">04</span>
       <h3>Start shortening</h3>
-      <p>Open the app in your browser, paste a URL, and get a short link instantly.</p>
+      <p>Open the app, paste a URL, and get a short link instantly.</p>
     </div>
   </div>
 
-  <div style="margin-top: 2rem;">
-    <div class="code-block"><span class="c"># deploy with a public URL</span>
-<span class="k">BASE_URL</span>=https://your-domain.com docker compose up --build -d
+  <div class="code-block"><span class="c"># run locally with Docker</span>
+git clone github.com/vinigani01/urlshort && cd urlshort
+docker compose -f docker-compose.local.yml up -d
 
-<span class="c"># or with ngrok for quick testing</span>
-ngrok http <span class="n">3000</span>
-<span class="k">BASE_URL</span>=https://xxxx.ngrok-free.app docker compose up -d</div>
-  </div>
+<span class="c"># stop</span>
+docker compose -f docker-compose.local.yml down</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    Built by <strong>Vini Gani</strong> &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; 2025
+    Built by <strong>Vini Gani</strong> &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; 2026
   </div>
   <div class="footer-links">
-    <a href="https://github.com/vinigani01/urlsnip" target="_blank">GitHub</a>
-    <a href="https://github.com/vinigani01/urlsnip/issues" target="_blank">Issues</a>
-    <a href="https://github.com/vinigani01/urlsnip/blob/main/README.md" target="_blank">Docs</a>
+    <a href="https://github.com/vinigani01/snip" target="_blank">GitHub</a>
+    <a href="https://github.com/vinigani01/snip/issues" target="_blank">Issues</a>
+    <a href="https://github.com/vinigani01/snip/blob/main/README.md" target="_blank">Docs</a>
   </div>
 </footer>
 
